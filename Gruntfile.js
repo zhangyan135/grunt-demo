@@ -1,14 +1,18 @@
+/*global module:true*/
 module.exports = function (grunt) {
-  grunt.initConfig({
-    eslint: {
-      options: {
-        configFile: '.eslintrc.json'
+ grunt.initConfig({
+    mocha: {
+      test: {
+        src: ['test/index.html'],
       },
-      target: ['*.js']
+      options: {
+        run: true,
+        reporter: 'Dot'
+      }
     }
   });
 
-  grunt.loadNpmTasks('grunt-eslint');
+  grunt.loadNpmTasks('grunt-mocha');
 
-  grunt.registerTask('default', ['eslint']);
-};
+  grunt.registerTask('default', ['mocha']);
+ };
