@@ -1,14 +1,13 @@
 module.exports = function (grunt) {
   grunt.initConfig({
-    htmlhint: {
-      options: {
-        htmlhintrc: '.htmlhintrc'
-      },
-      src: ['*.html']
-    }
+        cssmin: {  
+              'rectangle.min.css': 'rectangle.css'
+            }
+                  
   });
 
-  grunt.loadNpmTasks('grunt-htmlhint');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.registerTask('default', ['htmlhint']);
+      grunt.registerTask('default', ['cssmin']); 
 };
+
